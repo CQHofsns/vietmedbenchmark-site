@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VietMedBERT Benchmark</title>
+    <meta name="description" content="Vietnamese Medical Language Model Benchmark">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav"><a class="brand" href="#home">VietMedBERT</a>
+            <nav><a href="#tasks">Tasks</a><a href="#leaderboard">Leaderboard</a><a href="#models">Models</a><a
+                    href="#about">About</a></nav><a class="repo" href="https://github.com/" target="_blank">GitHub ↗</a>
+        </div>
+    </header>
+    <main id="home">
+        <section class="hero">
+            <div class="container">
+                <p class="eyebrow">VIETNAMESE MEDICAL NLP BENCHMARK</p>
+                <h1>Benchmarking Vietnamese language models for medicine.</h1>
+                <p class="hero-copy">A simple, transparent benchmark for comparing Vietnamese BERT-style models across
+                    medical NLP tasks.</p>
+                <div class="hero-actions"><a class="btn dark" href="#leaderboard">View leaderboard</a><a class="btn"
+                        href="#tasks">Explore tasks</a></div>
+                <div class="hero-stats">
+                    <div><strong id="taskCount">0</strong><span>tasks</span></div>
+                    <div><strong id="benchmarkCount">0</strong><span>benchmarks</span></div>
+                    <div><strong id="modelCount">0</strong><span>models</span></div>
+                    <div><strong id="resultCount">0</strong><span>reported results</span></div>
+                </div>
+            </div>
+        </section>
+        <section id="tasks" class="section">
+            <div class="container">
+                <div class="heading">
+                    <div>
+                        <p class="eyebrow">TASKS</p>
+                        <h2>Benchmark overview</h2>
+                    </div>
+                    <p>Each task collects one or more public medical benchmarks. New tasks can be added without changing
+                        the site structure.</p>
+                </div>
+                <div id="taskCards" class="task-grid"></div>
+            </div>
+        </section>
+        <section id="leaderboard" class="section muted">
+            <div class="container">
+                <div class="heading">
+                    <div>
+                        <p class="eyebrow">PERFORMANCE</p>
+                        <h2>Leaderboard</h2>
+                    </div>
+                    <p>Choose a task and benchmark to inspect model performance.</p>
+                </div>
+                <div class="filters"><label>Task<select id="taskSelect"></select></label><label>Benchmark<select
+                            id="benchmarkSelect"></select></label><label>Track<select id="trackSelect">
+                            <option value="all">All tracks</option>
+                            <option value="baseline">Baseline / frozen</option>
+                            <option value="finetuned">Fine-tuned</option>
+                        </select></label></div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Model</th>
+                                <th>Track</th>
+                                <th>Score</th>
+                                <th>Metric</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody"></tbody>
+                    </table>
+                </div>
+                <p id="noResults" class="empty hidden">No verified results for this selection yet.</p>
+            </div>
+        </section>
+        <section id="models" class="section">
+            <div class="container">
+                <div class="heading">
+                    <div>
+                        <p class="eyebrow">MODELS</p>
+                        <h2>Candidate models</h2>
+                    </div>
+                    <p>Every model name links directly to its Hugging Face model page.</p>
+                </div>
+                <div id="modelGrid" class="model-grid"></div>
+            </div>
+        </section>
+        <section id="about" class="section muted">
+            <div class="container about">
+                <div>
+                    <p class="eyebrow">ABOUT</p>
+                    <h2>A reproducible benchmark.</h2>
+                </div>
+                <div>
+                    <p>The benchmark is designed to separate pretrained representation quality from task-specific
+                        fine-tuning performance. Results will be added incrementally after the evaluation protocol for
+                        each benchmark is verified.</p>
+                    <p>Dataset versions, metrics, model revisions, and evaluation settings will live in the benchmark
+                        data files alongside the reported scores.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer"><span>VietMedBERT Benchmark</span><span>Open research benchmark · 2026</span>
+        </div>
+    </footer>
+    <script src="assets/app.js"></script>
+</body>
+
+</html>

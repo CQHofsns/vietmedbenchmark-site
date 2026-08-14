@@ -1,0 +1,171 @@
+{
+  "site": {
+    "name": "VietMedBERT Benchmark",
+    "year": 2026
+  },
+  "tasks": [
+    {
+      "id": "NER",
+      "name": "Named Entity Recognition",
+      "short": "NER",
+      "status": "active",
+      "description": "Medical named entity recognition in Vietnamese.",
+      "benchmarks": [
+        "VietMedNER"
+      ]
+    },
+    {
+      "id": "CLS",
+      "name": "Classification",
+      "short": "Classification",
+      "status": "planned",
+      "description": "Vietnamese medical text classification.",
+      "benchmarks": []
+    },
+    {
+      "id": "RE",
+      "name": "Relation Extraction",
+      "short": "RE",
+      "status": "planned",
+      "description": "Medical relation extraction.",
+      "benchmarks": []
+    },
+    {
+      "id": "NLI",
+      "name": "Natural Language Inference",
+      "short": "NLI",
+      "status": "planned",
+      "description": "Medical natural language inference.",
+      "benchmarks": []
+    },
+    {
+      "id": "QA",
+      "name": "Question Answering",
+      "short": "QA",
+      "status": "planned",
+      "description": "Vietnamese medical question answering.",
+      "benchmarks": []
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "vimedner",
+      "name": "ViMedNER",
+      "task": "NER",
+      "status": "active",
+      "description": "A Medical Named Entity Recognition Dataset for Vietnamese",
+      "version": "Unknown",
+      "license": "Unknown",
+      "primary_metric": "Entity-level micro F1",
+      "secondary_metric": "Entity-level macro F1",
+      "url": "https://github.com/tdtrinh11/ViMedNer"
+    }
+  ],
+  "models": [
+    {
+      "id": "Qualcomm-AI-Research/BamiBERT",
+      "name": "BamiBERT",
+      "type": "BERT",
+      "description": "a new BERT-based pre-trained language model for Vietnamese that addresses key limitations of PhoBERT",
+      "hf_url": "https://huggingface.co/Qualcomm-AI-Research/BamiBERT"
+    },
+    {
+      "id": "Fsoft-AIC/videberta-base",
+      "name": "ViDeBERTa-base",
+      "type": "BERT",
+      "description": "pre-trained monolingual language model for Vietnamese, pre-trained on 138GB of Vietnamese text of high-quality and diverse Vietnamese text using DeBERTaV3 architecture.",
+      "hf_url": "https://huggingface.co/Fsoft-AIC/videberta-base"
+    },
+    {
+      "id": "mainguyen9/viBERT-base",
+      "name": "viBERT-base",
+      "type": "BERT",
+      "description": "A Vietnamese RoBERTa-based language model pre-trained on CC-100 Vietnamese and custom Vietnamese corpus.",
+      "hf_url": "https://huggingface.co/mainguyen9/viBERT-base"
+    },
+    {
+      "id": "vinai/phobert-base",
+      "name": "phobert-base",
+      "type": "BERT",
+      "description": "Pre-trained PhoBERT models are the state-of-the-art language models for Vietnamese",
+      "hf_url": "https://huggingface.co/vinai/phobert-base"
+    },
+    {
+      "id": "vinai/phobert-large",
+      "name": "phobert-large",
+      "type": "BERT",
+      "description": "Pre-trained PhoBERT models are the state-of-the-art language models for Vietnamese",
+      "hf_url": "https://huggingface.co/vinai/phobert-large"
+    },
+    {
+      "id": "FacebookAI/xlm-roberta-base",
+      "name": "xlm-roberta-base",
+      "type": "BERT",
+      "description": "a model pre-trained on 2.5TB of filtered CommonCrawl data containing 100 languages.",
+      "hf_url": "https://huggingface.co/FacebookAI/xlm-roberta-base"
+    },
+    {
+      "id": "FacebookAI/xlm-roberta-large",
+      "name": "xlm-roberta-large",
+      "type": "BERT",
+      "description": "a model pre-trained on 2.5TB of filtered CommonCrawl data containing 100 languages.",
+      "hf_url": "https://huggingface.co/FacebookAI/xlm-roberta-large"
+    }
+  ],
+  "results": [
+    {
+      "model": "Qualcomm-AI-Research/BamiBERT",
+      "task": "NER",
+      "benchmark": "vimedner",
+      "track": "finetuned",
+      "track_label": "Fine-tuned",
+      "score": 66.95,
+      "metric": "Micro F1"
+    },
+    {
+      "model": "mainguyen9/viBERT-base",
+      "task": "NER",
+      "benchmark": "vimedner",
+      "track": "finetuned",
+      "track_label": "Fine-tuned",
+      "score": 63.14,
+      "metric": "Micro F1"
+    },
+    {
+      "model": "FacebookAI/xlm-roberta-large",
+      "task": "NER",
+      "benchmark": "vimedner",
+      "track": "finetuned",
+      "track_label": "Fine-tuned",
+      "score": 72.5,
+      "metric": "Micro F1"
+    },
+    {
+      "model": "FacebookAI/xlm-roberta-base",
+      "task": "NER",
+      "benchmark": "vimedner",
+      "track": "finetuned",
+      "track_label": "Fine-tuned",
+      "score": 71.0,
+      "metric": "Micro F1"
+    },
+    {
+      "model": "vinai/phobert-large",
+      "task": "NER",
+      "benchmark": "vimedner",
+      "track": "finetuned",
+      "track_label": "Fine-tuned",
+      "score": 71.1,
+      "metric": "Micro F1"
+    },
+    {
+      "model": "vinai/phobert-base",
+      "task": "NER",
+      "benchmark": "vimedner",
+      "track": "finetuned",
+      "track_label": "Fine-tuned",
+      "score": 70.1,
+      "metric": "Micro F1"
+    }
+  ]
+}
