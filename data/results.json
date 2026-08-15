@@ -26,7 +26,7 @@
       "id": "RE",
       "name": "Relation Extraction",
       "short": "RE",
-      "status": "planned",
+      "status": "comming soon",
       "description": "Medical relation extraction.",
       "benchmarks": []
     },
@@ -59,6 +59,18 @@
       "primary_metric": "Entity-level micro F1",
       "secondary_metric": "Entity-level macro F1",
       "url": "https://github.com/tdtrinh11/ViMedNer"
+    },
+    {
+      "id": "vimq",
+      "name": "ViMQ",
+      "task": "CLS",
+      "status": "active",
+      "description": "A Vietnames Medical Question dataset for Healthcare dialogue system development",
+      "version": "Unknown",
+      "license": "Unknown",
+      "primary_metric": "Entity-level macro F1",
+      "secondary_metric": "Entity accuracy",
+      "url": "https://github.com/tadeephuy/ViMQ/tree/main"
     }
   ],
   "models": [
@@ -103,13 +115,6 @@
       "type": "BERT",
       "description": "a model pre-trained on 2.5TB of filtered CommonCrawl data containing 100 languages.",
       "hf_url": "https://huggingface.co/FacebookAI/xlm-roberta-base"
-    },
-    {
-      "id": "FacebookAI/xlm-roberta-large",
-      "name": "xlm-roberta-large",
-      "type": "BERT",
-      "description": "a model pre-trained on 2.5TB of filtered CommonCrawl data containing 100 languages.",
-      "hf_url": "https://huggingface.co/FacebookAI/xlm-roberta-large"
     }
   ],
   "results": [
@@ -132,21 +137,12 @@
       "metric": "Micro F1"
     },
     {
-      "model": "FacebookAI/xlm-roberta-large",
-      "task": "NER",
-      "benchmark": "vimedner",
-      "track": "finetuned",
-      "track_label": "Fine-tuned",
-      "score": 72.5,
-      "metric": "Micro F1"
-    },
-    {
       "model": "FacebookAI/xlm-roberta-base",
       "task": "NER",
       "benchmark": "vimedner",
       "track": "finetuned",
       "track_label": "Fine-tuned",
-      "score": 71.0,
+      "score": 69.54,
       "metric": "Micro F1"
     },
     {
@@ -166,6 +162,69 @@
       "track_label": "Fine-tuned",
       "score": 70.1,
       "metric": "Micro F1"
+    },
+    {
+      "model": "Fsoft-AIC/videberta-base",
+      "task": "NER",
+      "benchmark": "vimedner",
+      "track": "finetuned",
+      "track_label": "Fine-tuned",
+      "score": 58.62,
+      "metric": "Micro F1"
+    },
+    {
+        "model": "mainguyen9/viBERT-base",
+        "task": "CLS",
+        "benchmark": "vimq",
+        "track": "finetuned",
+        "track_label": "Fine-tuned",
+        "score": 0.9079,
+        "metric": "Macro F1"
+    },
+    {
+        "model": "mainguyen9/viBERT-base",
+        "task": "CLS",
+        "benchmark": "vimq",
+        "track": "baseline",
+        "track_label": "Baseline / frozen",
+        "score": 0.2378,
+        "metric": "Macro F1"
+    },
+    {
+        "model": "Qualcomm-AI-Research/BamiBERT",
+        "task": "CLS",
+        "benchmark": "vimq",
+        "track": "finetuned",
+        "track_label": "Fine-tuned",
+        "score": 0.8891,
+        "metric": "Macro F1"
+    },
+    {
+        "model": "Qualcomm-AI-Research/BamiBERT",
+        "task": "CLS",
+        "benchmark": "vimq",
+        "track": "baseline",
+        "track_label": "Baseline / frozen",
+        "score": 0.1631,
+        "metric": "Macro F1"
+    },
+    {
+        "model": "Fsoft-AIC/videberta-base",
+        "task": "CLS",
+        "benchmark": "vimq",
+        "track": "finetuned",
+        "track_label": "Fine-tuned",
+        "score": 0.9001,
+        "metric": "Macro F1"
+    },
+    {
+        "model": "Fsoft-AIC/videberta-base",
+        "task": "CLS",
+        "benchmark": "vimq",
+        "track": "baseline",
+        "track_label": "Baseline / frozen",
+        "score": 0.1631,
+        "metric": "Macro F1"
     }
   ]
 }
