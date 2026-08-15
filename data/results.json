@@ -20,7 +20,9 @@
       "short": "Classification",
       "status": "planned",
       "description": "Vietnamese medical text classification.",
-      "benchmarks": []
+      "benchmarks": [
+        "ViMQ"
+      ]
     },
     {
       "id": "RE",
@@ -36,7 +38,9 @@
       "short": "NLI",
       "status": "planned",
       "description": "Medical natural language inference.",
-      "benchmarks": []
+      "benchmarks": [
+        "ViMedNLI"
+      ]
     },
     {
       "id": "QA",
@@ -71,6 +75,18 @@
       "primary_metric": "Entity-level macro F1",
       "secondary_metric": "Entity accuracy",
       "url": "https://github.com/tadeephuy/ViMQ/tree/main"
+    },
+    {
+      "id": "vimednli",
+      "name": "ViMedNLI",
+      "task": "NLI",
+      "status": "active",
+      "description": "a new NLP task in Vietnamese translated from MedNLI using the recently public En-vi translation model and carefully refined by human experts, with evaluations of existing methods against ViPubmedT5.",
+      "version": "1f4c0b7bd452f2ebdf2aa83c1bf5b460f9c4d180",
+      "license": "Unknown",
+      "primary_metric": "Accuracy",
+      "secondary_metric": "Macro F1",
+      "url": "https://huggingface.co/datasets/tmnam20/ViMedNLI"
     }
   ],
   "models": [
@@ -225,6 +241,114 @@
         "track_label": "Baseline / frozen",
         "score": 0.1631,
         "metric": "Macro F1"
+    },
+    {
+        "model": "vinai/phobert-base",
+        "task": "CLS",
+        "benchmark": "vimq",
+        "track": "finetuned",
+        "track_label": "Fine-tuned",
+        "score": 0.9095,
+        "metric": "Macro F1"
+    },
+    {
+        "model": "vinai/phobert-base",
+        "task": "CLS",
+        "benchmark": "vimq",
+        "track": "baseline",
+        "track_label": "Baseline / frozen",
+        "score": 0.7318,
+        "metric": "Macro F1"
+    },
+    {
+        "model": "FacebookAI/xlm-roberta-base",
+        "task": "CLS",
+        "benchmark": "vimq",
+        "track": "finetuned",
+        "track_label": "Fine-tuned",
+        "score": 0.9094,
+        "metric": "Macro F1"
+    },
+    {
+        "model": "FacebookAI/xlm-roberta-base",
+        "task": "CLS",
+        "benchmark": "vimq",
+        "track": "baseline",
+        "track_label": "Baseline / frozen",
+        "score": 0.1631,
+        "metric": "Macro F1"
+    },
+    {
+        "model": "vinai/phobert-base",
+        "task": "NLI",
+        "benchmark": "vimednli",
+        "track": "finetuned",
+        "track_label": "Fine-tuned",
+        "score": 0.794,
+        "metric": "Accuracy"
+    },
+    {
+        "model": "vinai/phobert-base",
+        "task": "NLI",
+        "benchmark": "vimednli",
+        "track": "baseline",
+        "track_label": "Baseline / frozen",
+        "score": 0.5176,
+        "metric": "Accuracy"
+    },
+    {
+        "model": "Qualcomm-AI-Research/BamiBERT",
+        "task": "NLI",
+        "benchmark": "vimednli",
+        "track": "finetuned",
+        "track_label": "Fine-tuned",
+        "score": 0.5,
+        "metric": "Accuracy"
+    },
+    {
+        "model": "Qualcomm-AI-Research/BamiBERT",
+        "task": "NLI",
+        "benchmark": "vimednli",
+        "track": "baseline",
+        "track_label": "Baseline / frozen",
+        "score": 0.4255,
+        "metric": "Accuracy"
+    },
+    {
+        "model": "mainguyen9/viBERT-base",
+        "task": "NLI",
+        "benchmark": "vimednli",
+        "track": "finetuned",
+        "track_label": "Fine-tuned",
+        "score": 0.7032,
+        "metric": "Accuracy"
+    },
+    {
+        "model": "mainguyen9/viBERT-base",
+        "task": "NLI",
+        "benchmark": "vimednli",
+        "track": "baseline",
+        "track_label": "Baseline / frozen",
+        "score": 0.4037,
+        "metric": "Accuracy"
+    },
+    {
+        "model": "FacebookAI/xlm-roberta-base",
+        "task": "NLI",
+        "benchmark": "vimednli",
+        "track": "finetuned",
+        "track_label": "Fine-tuned",
+        "score": 0.7757,
+        "metric": "Accuracy"
+    },
+    {
+        "model": "FacebookAI/xlm-roberta-base",
+        "task": "NLI",
+        "benchmark": "vimednli",
+        "track": "baseline",
+        "track_label": "Baseline / frozen",
+        "score": 0.4233,
+        "metric": "Accuracy"
     }
   ]
 }
